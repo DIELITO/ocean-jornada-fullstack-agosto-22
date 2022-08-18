@@ -3,7 +3,7 @@ const { MongoClient } = require("mongodb");
 
 //const url = "mongodb://localhost:27017"
 //const url = "mongodb+srv://admin:LdQHrR3iAM9u4Mtw@cluster0.ih1f4.mongodb.net"
-const url = "mongodb+srv://nuvem:RoMIewhL7RMAuhpA@cluster0.h1xxq30.mongodb.net/test"
+const url = "mongodb+srv://admin:YzOCE9cR7TOWpyCV@cluster0.nxhs41w.mongodb.net/"
 const dbName = "ocean_fullstack_08_22_p_salvatore"
 
 // Declaração da função main()
@@ -16,13 +16,12 @@ async function main() {
   //  Promises do JavaScript, que permitem aguardar
   //  esse tempo. Para isso, vamos usar o async/await.
 
-  /*console.log("Conectando com o banco de dados...");
+  console.log("Conectando com o banco de dados...");
 
-  /*
+  
   const client = await MongoClient.connect(url);
   const db = client.db(dbName);
   const collection = db.collection("pontuacoes");
-  */
 
   console.log("Banco de dados conectado com sucesso!");
 
