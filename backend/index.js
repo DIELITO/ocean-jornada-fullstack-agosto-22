@@ -10,7 +10,6 @@ const dbName = "ocean_fullstack_08_22_p_salvatore"
 async function main() {
   // Realizar a conexão com o MongoClient
   // MongoClient -> MongoDatabase -> MongoCollection
-
   // Conexões com o client podem levar um tempo para
   //  concluir. Portanto, utilizamos o mecanismo de
   //  Promises do JavaScript, que permitem aguardar
