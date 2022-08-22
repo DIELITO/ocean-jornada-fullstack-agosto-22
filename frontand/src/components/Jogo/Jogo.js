@@ -1,7 +1,12 @@
-import "./Jogo.css"
+import "./Jogo.css";
+import clouds from "../../assets/clouds.png";
 
-function Jogo(){
-    return <div>Jogo</div>
+function Jogo() {
+  return (
+    <div className="jogo">
+      <img src={clouds} />
+      <img className="nuvens" src={clouds} alt="Nuvens" />
+    </div>
+  );
 }
-
-export default Jogo
+export default Jogo;
