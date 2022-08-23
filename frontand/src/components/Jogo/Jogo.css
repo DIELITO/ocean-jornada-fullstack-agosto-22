@@ -32,7 +32,7 @@
   animation-timing-function: linear;
   */
 
-  animation: mover-direita-para-esquerda infinite 2s linear;
+  animation: mover-direita-para-esquerda infinite 10s linear;
 }
 
 @keyframes mover-direita-para-esquerda {
