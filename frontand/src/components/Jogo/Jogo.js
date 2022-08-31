@@ -5,7 +5,7 @@ import mario from "../../assets/mario.gif";
 import gameOver from "../../assets/game-over.png";
 import React, { useEffect, useRef, useState } from "react";
 
-function Jogo() {
+function Jogo(props) {
   /*
   const estaPulando = useState(false);
   const estado = estaPulando[0];
@@ -53,22 +53,32 @@ function Jogo() {
     );
   }
 
-  // Implementação temporária para exibir se o mário está no cano
-  // ou não
-  setInterval(function () {
-    // Pegamos o valor que determinar se o Mario
-    // está no cano ou não
-    const estaNoCano = marioEstaNoCano();
+  useEffect(
+    // Effect
+    function () {
+      // Implementação temporária para exibir se o mário
+      // está no cano ou não
+      setInterval(function () {
+        // Pegamos o valor que determinar se o Mario
+        // está no cano ou não
+        const estaNoCano = marioEstaNoCano();
 
-    // Se o Mario não estiver no cano, encerramos a função com `return`
-    if (!estaNoCano) {
-      return;
-    }
+        // Se o Mario não estiver no cano, encerramos a função com `return`
+        if (!estaNoCano) {
+          return;
+        }
 
-    // Caso esteja no cano, atualizamos o estado
-    // `estaMorto` para `true`
-    setEstaMorto(true);
-  }, 100);
+        // Caso esteja no cano, atualizamos o estado
+        // `estaMorto` para `true`
+        setEstaMorto(true);
+        props.onMorrer();
+      }, 100);
+
+      // (Opcional) Return mecanismo que desfaz o Effect anterior
+    },
+    // Lista de dependências
+    []
+  );
 
   // UseEffect
   useEffect(
@@ -80,14 +90,17 @@ function Jogo() {
         }
 
         setPontos(pontos + 1);
-
-        console.log({ pontos });
       }, 500);
 
       return () => clearInterval(interval);
     },
     [estaMorto, pontos]
   );
+
+  /*
+  - Exibir pontos em tempo real (DESAFIO)
+  - Quando der GameOver, exibir o HighScore
+  */
 
   document.onkeydown = function () {
     // Atualizamos o estado para true
@@ -123,6 +136,8 @@ function Jogo() {
 
   return (
     <div className="jogo">
+      <div>Pontos: {pontos}</div>
+
       <img className="nuvens" src={nuvens} alt="Nuvens" />
 
       <img
