@@ -1,3 +1,4 @@
+const cors = require("cors");
 const express = require("express");
 const { MongoClient } = require("mongodb");
 
@@ -25,6 +26,9 @@ async function main() {
   console.log("Banco de dados conectado com sucesso!");
 
   const app = express();
+
+  // Ativamos as configurações do CORS
+  app.use(cors());
 
   // Sinalizamos para o express que estamos usando
   // JSON no body das requisições
